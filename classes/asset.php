@@ -164,17 +164,17 @@ class Asset {
 			return $failed;
 		}
 
-		if($this->is('styles'))
-		{
-			$contents = Vendor\URIRewriter::rewrite($contents, dirname($this->directory .DS . $this->file), $document_root, $symlinks);
-		}
-
 		if($this->is('less') && $lessphp)
 		{
 			$less = new Vendor\lessc;
 			$less->importDir = $this->directory;
 
 			$contents = $less->parse($contents);
+		}
+
+		if($this->is('styles'))
+		{
+			$contents = Vendor\URIRewriter::rewrite($contents, dirname($this->directory .DS . $this->file), $document_root, $symlinks);
 		}
 
 		return $contents . PHP_EOL;
