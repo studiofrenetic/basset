@@ -45,7 +45,7 @@ return array(
 		 * Use the LessPHP compiler to compile .less files, handy if you do not have LESS installed
 		 * on your server and you still want the LESS functionality.
 		 */
-		'php' => false
+		'php' => true
 	),
 
 	'compiling' => array(
@@ -54,7 +54,7 @@ return array(
 		 * 
 		 * The directory to save the compiled Basset files, ensure this directory is writeable.
 		 */
-		'directory' => Bundle::path('basset') . 'compiled',
+		'directory' => path('storage') . 'basset',
 
 		/**
 		 * Recompile

@@ -23,7 +23,7 @@
 | and begin adding your assets.
 |
 */
-Basset::styles('example', function($basset)
+/*Basset::styles('example', function($basset)
 {
 	$basset->add('theme', 'theme.css');
 });
@@ -31,4 +31,4 @@ Basset::styles('example', function($basset)
 Basset::scripts('example', function($basset)
 {
 	$basset->add('jquery', 'jquery.js');
-});
+});*/
