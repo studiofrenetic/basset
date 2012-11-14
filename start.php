@@ -44,11 +44,7 @@ if(starts_with(URI::current(), Bundle::option('basset', 'handles')))
 			'css' 	=> 'text/css',
 			'js'	=> 'text/javascript'
 		);
-		if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
-			ob_start("ob_gzhandler");
-		}else{
-			ob_start();
-		}
+
 		$extension = File::extension(Request::uri());
 
 		if(array_key_exists($extension, $types))
