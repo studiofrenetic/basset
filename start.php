@@ -44,7 +44,11 @@ if(starts_with(URI::current(), Bundle::option('basset', 'handles')))
 			'css' 	=> 'text/css',
 			'js'	=> 'text/javascript'
 		);
-
+		if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){
+			ob_start("ob_gzhandler");
+		}else{
+			ob_start();
+		}
 		$extension = File::extension(Request::uri());
 
 		if(array_key_exists($extension, $types))
@@ -59,6 +63,7 @@ if(starts_with(URI::current(), Bundle::option('basset', 'handles')))
 		// To prevent any further output being added to any Basset routes we'll clear any events listening
 		// for the laravel.done event.
 		Event::clear('laravel.done');
+
 	});
 
 }
