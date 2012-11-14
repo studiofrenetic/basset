@@ -50,6 +50,9 @@ if(starts_with(URI::current(), Bundle::option('basset', 'handles')))
 		if(array_key_exists($extension, $types))
 		{
 			$response->header('Content-Type', $types[$extension]);
+			$response->header('Pragma', 'cache');
+			$response->header('Last-Modified', gmdate('D, d M Y H:i:s').' GMT');
+
 		}
 
 		// To prevent any further output being added to any Basset routes we'll clear any events listening
