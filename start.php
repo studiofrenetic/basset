@@ -50,6 +50,7 @@ if(starts_with(URI::current(), Bundle::option('basset', 'handles')))
 		if(array_key_exists($extension, $types))
 		{
 			$response->header('Content-Type', $types[$extension]);
+			$response->header('Cache-Control', 'max-age='.(24*60*60).', public');
 			$response->header('Pragma', 'cache');
 			$response->header('Last-Modified', gmdate('D, d M Y H:i:s').' GMT');
 
