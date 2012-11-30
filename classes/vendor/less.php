@@ -2359,10 +2359,10 @@ class lessc {
 			}
 
 			if ($this->peek("(.*?)(\n|$)", $m))
-				throw new exception($msg.': failed at `'.$m[1].'` '.$loc);
+				throw new \Exception($msg.': failed at `'.$m[1].'` '.$loc);
 		}
 
-		throw new exception($msg);
+		throw new \Exception($msg);
 	}
 
 	/**
