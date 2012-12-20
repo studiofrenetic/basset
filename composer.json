@@ -1,0 +1,15 @@
+{
+    "name": "frenesie/bundles/basset",
+    "description": "A Better Asset Management package for Laravel.",
+    "authors": [
+        {
+            "name": "Jason Lewis",
+            "email": "jason.lewis1991@gmail.com",
+            "homepage": "http://jasonlewis.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability": "dev"
+}
