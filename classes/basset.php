@@ -187,7 +187,7 @@ class Basset {
 			return $response . PHP_EOL . $container->compile();
 		}
 
-		return HTML::$methods[File::extension($route)](URL::to_asset(Bundle::option('basset', 'handles') . '/' . $route));
+		return HTML::$methods[File::extension($route)](URL::to_asset(Bundle::option('basset', 'handles') . '/' . $route, (bool)Request::server('HTTPS')));
 	}
 
 }
